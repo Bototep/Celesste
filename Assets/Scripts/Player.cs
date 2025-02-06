@@ -1,23 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class Player : MonoBehaviour
 {
 	public GameManager gameManager;
 	public Transform respawnPoint;
 
+
+	[SerializeField]
 	private float moveSpeed = 5f;
-	private float jumpForce = 10f;
+	
+	[SerializeField]
 	private float dashRange = 4f;
+
+	[SerializeField]
 	private float dashDuration = 0.1f;
+
+	[SerializeField]
 	private float dashSpeed = 40f;
+
+	[SerializeField]
 	private float fallSpeedIncrease = 100f;
+	
+	[SerializeField]
+	private float jumpForce = 10f;
+
+
 	private Rigidbody2D rb;
 	private bool isGrounded;
 	private bool isDashing;
 	private bool canDash = true;
 	private bool hasDashedInAir = false;
+
+
+	
 
 	void Start()
 	{
@@ -30,9 +49,10 @@ public class Player : MonoBehaviour
 		{
 			return;
 		}
-
+		
 		float moveInput = Input.GetAxis("Horizontal");
 		rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+		
 
 		if (Input.GetButtonDown("Jump") && isGrounded)
 		{
@@ -52,7 +72,9 @@ public class Player : MonoBehaviour
 		{
 			IncreaseFallSpeed();
 		}
+		
 	}
+
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -123,10 +145,12 @@ public class Player : MonoBehaviour
 		}
 	}
 
+	
 	private void IncreaseFallSpeed()
 	{
 		rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y - fallSpeedIncrease * Time.deltaTime);
 	}
+	
 
 	private void Respawn()
 	{
