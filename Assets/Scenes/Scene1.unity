@@ -66870,6 +66870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 64203331693965205, guid: 5ce1bb9c4471352448d84838d309beb1, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 722149171175320976, guid: 5ce1bb9c4471352448d84838d309beb1, type: 3}
       propertyPath: gameManager
       value: 
@@ -66912,6 +66916,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2588268049924665219, guid: 5ce1bb9c4471352448d84838d309beb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476624080065817024, guid: 5ce1bb9c4471352448d84838d309beb1, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
